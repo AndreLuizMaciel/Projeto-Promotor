@@ -1,184 +1,141 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projeto Promotor | Excelência em Qualidade e Decisão</title>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
 
-<body>
+    --background: 220 20% 4%;
+    --foreground: 213 31% 91%;
+    --card: 220 17% 8%;
+    --card-foreground: 213 31% 91%;
+    --popover: 220 17% 8%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 14%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 192 82% 37%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 263 70% 50%;
+    --chart-1: 263 70% 50%;
+    --chart-2: 192 82% 37%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 220 20% 4%;
+    --chart-5: 213 31% 91%;
+    --radius: 0.75rem;
 
-<nav class="navbar">
-  <div class="logo">Projeto Promotor</div>
-  <ul class="menu">
-    <li><a href="#projeto">Projeto</a></li>
-    <li><a href="#governanca">Governança</a></li>
-    <li><a href="#atuacao">Modelo de Atuação</a></li>
-    <li><a href="#nexus">NEXUS</a></li>
-    <li><a href="#boaspraticas">Boas Práticas</a></li>
-    <li><a href="#premiacoes">Premiações</a></li>
-    <li><a href="#artigos">Artigos</a></li>
-    <li><a href="#autores">Autores</a></li>
-  </ul>
-</nav>
+    --nexus: 263 70% 50%;
+    --cyan: 192 82% 37%;
+    --gold: 38 92% 50%;
+    --deep: 220 20% 4%;
+    --surface: 210 40% 96%;
 
-<header class="hero">
-  <h1>Projeto Promotor</h1>
-  <p>Analisar. Priorizar. Corrigir. Evoluir. Impulsionar Resultados.</p>
-</header>
+    --sidebar-background: 220 17% 6%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 263 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 263 70% 50%;
+  }
 
-<!-- ================= PROJETO ================= -->
-<section id="projeto" class="section">
-  <h2>Visão Geral</h2>
-  <p>
-    O <strong>Projeto Promotor</strong> é um programa corporativo estruturante de alta performance
-    em Qualidade, Governança Operacional e Inteligência Analítica, concebido para transformar dados,
-    indicadores críticos e percepções do cliente em decisões estratégicas, ações direcionadas
-    e resultados sustentáveis de negócio.
-  </p>
+  .dark {
+    --background: 220 20% 4%;
+    --foreground: 213 31% 91%;
+    --card: 220 17% 8%;
+    --card-foreground: 213 31% 91%;
+    --popover: 220 17% 8%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 14%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 192 82% 37%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 263 70% 50%;
+    --chart-1: 263 70% 50%;
+    --chart-2: 192 82% 37%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 220 20% 4%;
+    --chart-5: 213 31% 91%;
+    --sidebar-background: 220 17% 6%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 263 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 263 70% 50%;
+  }
+}
 
-  <p>
-    Mais do que uma metodologia de monitoria, o Promotor posiciona a Qualidade como
-    <strong>agente de performance, prevenção, eficiência e crescimento corporativo</strong>,
-    operando em ambientes complexos, regulados e de alto volume operacional.
-  </p>
-</section>
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
 
-<!-- ================= GOVERNANÇA ================= -->
-<section id="governanca" class="section dark">
-  <h2>Governança Corporativa</h2>
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
 
-  <ul>
-    <li>Alinhamento direto com estratégia corporativa e contratos</li>
-    <li>Estrutura organizacional clara e especializada</li>
-    <li>Cultura centrada no Cliente (NPS, CSAT, VOC)</li>
-    <li>Gestão de riscos, reincidência e desvios críticos</li>
-    <li>Monitoramento executivo com visão histórica e preditiva</li>
-  </ul>
-</section>
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
-<!-- ================= MODELO DE ATUAÇÃO ================= -->
-<section id="atuacao" class="section">
-  <h2>Modelo de Atuação</h2>
+@layer utilities {
+  .text-gradient-purple {
+    background: linear-gradient(135deg, hsl(263 70% 50%), hsl(192 82% 37%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-  <div class="cards">
-    <div class="card">
-      <h3>Fase 01 – Zona Qualitativa</h3>
-      <p>Monitorias inteligentes, mapeamento de jornada e leitura comportamental.</p>
-    </div>
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(38 92% 50%), hsl(38 92% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-    <div class="card">
-      <h3>Fase 02 – Alertas de Qualidade</h3>
-      <p>Acionamento imediato para NCG, ruptura de meta e risco operacional.</p>
-    </div>
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
 
-    <div class="card">
-      <h3>Fase 03 – Calibrações</h3>
-      <p>Alinhamento técnico, justiça avaliativa e maturidade do modelo.</p>
-    </div>
+  .glass-nav {
+    background: rgba(6, 11, 22, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
 
-    <div class="card">
-      <h3>Controle de Ações</h3>
-      <p>Plano de ação estruturado, responsável, prazo e mensuração de impacto.</p>
-    </div>
-  </div>
-</section>
+  .glow-purple {
+    box-shadow: 0 0 60px rgba(109, 40, 217, 0.15), 0 0 120px rgba(109, 40, 217, 0.05);
+  }
 
-<!-- ================= NEXUS ================= -->
-<section id="nexus" class="section dark">
-  <h2>NEXUS – Inteligência Analítica</h2>
+  .glow-cyan {
+    box-shadow: 0 0 60px rgba(8, 145, 178, 0.15), 0 0 120px rgba(8, 145, 178, 0.05);
+  }
 
-  <p>
-    O <strong>NEXUS</strong> é a camada científica do Projeto Promotor.
-    Utiliza estatística aplicada, correlação entre KPI’s, modelagem de risco,
-    simulação de cenários e previsão operacional.
-  </p>
-
-  <blockquote>
-    “Decisão baseada em evidência, não em opinião.”
-  </blockquote>
-</section>
-
-<!-- ================= BOAS PRÁTICAS ================= -->
-<section id="boaspraticas" class="section">
-  <h2>Boas Práticas</h2>
-
-  <ul>
-    <li>Padronização de KPIs e conceitos</li>
-    <li>Governança de critérios</li>
-    <li>Responsabilização clara (owner)</li>
-    <li>Foco em ROI e efetividade</li>
-  </ul>
-</section>
-
-<!-- ================= PREMIAÇÕES ================= -->
-<section id="premiacoes" class="section dark">
-  <h2>Premiações e Reconhecimento</h2>
-  <p>
-    O Projeto Promotor é reconhecido nacionalmente por sua inovação em Qualidade e CX,
-    incluindo premiações como ABRAREC e ABT.
-  </p>
-</section>
-
-<!-- ================= ARTIGOS ================= -->
-<section id="artigos" class="section">
-  <h2>Artigos Técnicos</h2>
-  
-  <p>
-    “Qualidade não é controle. É alavanca estratégica de resultado.”
-  </p>
-
-  <a href="https://lnkd.in/ddHTCwhY" target="_blank">
-    Ler artigo completo
-  </a>
-</section>
-
-<!-- ================= AUTORES ================= -->
-<section id="autores" class="section autores">
-  <h2>Fundadores e Idealizadores</h2>
-
-  <div class="autores-grid">
-
-    <div class="autor-card">
-      <img src="assets/images/jonatas.jpg" alt="Jonatas Castro">
-      <h3>Jonatas Castro</h3>
-      <p>Direção estratégica e governança corporativa.</p>
-      <a href="https://www.linkedin.com/in/j%C3%B4natas-castro-39943877" target="_blank">LinkedIn</a>
-    </div>
-
-    <div class="autor-card">
-      <img src="assets/images/andre.jpg" alt="André Luiz Maciel">
-      <h3>André Luiz Maciel</h3>
-      <p>Inteligência analítica, KPIs e estrutura metodológica.</p>
-      <a href="https://www.linkedin.com/in/andre-luiz-maciel-622a52119" target="_blank">LinkedIn</a>
-    </div>
-
-    <div class="autor-card">
-      <img src="assets/images/luilton.jpg" alt="Luilton Pereira">
-      <h3>Luilton Pereira</h3>
-      <p>Tração operacional e execução do modelo.</p>
-    </div>
-
-    <div class="autor-card">
-      <img src="assets/images/cleonice.jpg" alt="Cleonice Oliveira">
-      <h3>Cleonice Oliveira</h3>
-      <p>Padronização metodológica e sustentação técnica.</p>
-    </div>
-
-  </div>
-</section>
-
-<footer class="footer">
-  <p>© 2026 Projeto Promotor | Excelência, Dados e Resultado</p>
-</footer>
-
-<script src="assets/js/script.js"></script>
-</body>
-</html>
+  .nexus-gradient {
+    background: radial-gradient(ellipse at center, rgba(109, 40, 217, 0.15) 0%, transparent 70%);
+  }
+}
