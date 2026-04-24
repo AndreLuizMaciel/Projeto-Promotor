@@ -1,0 +1,231 @@
+/* ===== AUTORES SECTION ===== */
+.authors {
+    background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+    padding: var(--spacing-2xl) 0;
+}
+
+.authors-philosophy {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    background: white;
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.philosophy-quote {
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-style: italic;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.author-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border-top: 5px solid;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.author-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-xl);
+}
+
+.author-card.founder {
+    border-top-color: var(--secondary);
+}
+
+.author-card.founder:hover {
+    border-top-color: var(--accent);
+}
+
+.author-card.developer {
+    border-top-color: var(--accent);
+}
+
+.author-card.developer:hover {
+    border-top-color: var(--secondary);
+}
+
+.author-header {
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.founder-header {
+    background: linear-gradient(135deg, var(--secondary) 0%, #6d28d9 100%);
+    color: white;
+}
+
+.developer-header {
+    background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+    color: white;
+}
+
+.author-role-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.author-icon {
+    font-size: 2.5rem;
+    opacity: 0.9;
+}
+
+.author-body {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.author-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.author-title {
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+}
+
+.author-description {
+    flex-grow: 1;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.author-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    color: white;
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    width: fit-content;
+    margin-top: auto;
+}
+
+.author-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+.linkedin-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.authors-footer {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--secondary);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.authors-footer p {
+    margin-bottom: 0;
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+
+/* ===== RESPONSIVE AUTORES ===== */
+@media (max-width: 768px) {
+    .authors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-quote {
+        font-size: 1.1rem;
+    }
+
+    .author-header {
+        padding: var(--spacing-md);
+    }
+
+    .author-body {
+        padding: var(--spacing-md);
+    }
+
+    .author-body h3 {
+        font-size: 1.1rem;
+    }
+
+    .author-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .authors {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .philosophy-quote {
+        font-size: 1rem;
+    }
+
+    .author-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .author-body h3 {
+        font-size: 1rem;
+    }
+
+    .author-title {
+        font-size: 0.9rem;
+    }
+
+    .author-description {
+        font-size: 0.9rem;
+    }
+
+    .author-link {
+        font-size: 0.85rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
