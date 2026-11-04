@@ -1,141 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projeto Promotor | Qualidade como alavanca estratégica de resultado</title>
+<meta name="description" content="Projeto Promotor: modelo de gestão que posiciona a Qualidade como alavanca estratégica de resultado em operações de atendimento, integrando governança, inteligência quantitativa e qualitativa, execução e a camada científica NEXUS.">
+<meta name="author" content="André Luiz Maciel; Jonatas Castro; Luilton Pereira; Cleonice Oliveira">
+<link rel="canonical" href="https://andreluizmaciel.github.io/Projeto-Promotor/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projeto Promotor — Qualidade não é controle. É alavanca estratégica de resultado.">
+<meta property="og:description" content="Modelo de gestão que transforma dados, voz do cliente e governança em decisões e resultado.">
+<meta property="og:url" content="https://andreluizmaciel.github.io/Projeto-Promotor/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWork","name":"Projeto Promotor","alternateName":"Nexus Promotor","inLanguage":"pt-BR","url":"https://andreluizmaciel.github.io/Projeto-Promotor/","description":"Modelo de gestão que posiciona a Qualidade como alavanca estratégica de resultado em operações de atendimento.","creator":[{"@type":"Person","name":"Jonatas Castro","sameAs":"https://www.linkedin.com/in/j%C3%B4natas-castro-39943877"},{"@type":"Person","name":"André Luiz Maciel","sameAs":["https://orcid.org/0009-0000-1747-1392","https://www.linkedin.com/in/andr%C3%A9-luiz-maciel-622a52119/"]},{"@type":"Person","name":"Luilton Pereira","sameAs":"https://www.linkedin.com/in/luilton-pereira-72502952"},{"@type":"Person","name":"Cleonice Oliveira","sameAs":"https://www.linkedin.com/in/cleonice-araujo-a586091a5"}],"dateCreated":"2026","license":"https://creativecommons.org/licenses/by-nd/4.0/"}
+</script>
+<style>
+:root{--bg:#080a0c;--bg2:#10141a;--card:#141922;--line:#232b36;--fg:#e1e7ef;--muted:#94a3b8;--accent:#8b5cf6;--accent2:#22d3ee}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--accent2)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(8,10,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{font-weight:800;letter-spacing:.5px;color:var(--fg);text-decoration:none}.logo span{color:var(--accent)}
+nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-size:.92rem}nav a:hover{color:var(--fg)}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:6px 10px;font-size:1rem}
+@media(max-width:860px){#menu{display:block}nav ul{display:none;position:absolute;left:0;right:0;top:60px;flex-direction:column;gap:0;background:var(--bg2);border-bottom:1px solid var(--line)}nav ul.open{display:flex}nav li a{display:block;padding:12px 20px}}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.1;margin:12px 0 18px}
+h2{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.2;margin:8px 0 14px}
+h3{font-size:1.08rem;margin:0 0 6px}
+p.lead{font-size:1.15rem;color:var(--muted);max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.num{font-size:.8rem;font-weight:800;color:var(--accent);letter-spacing:1px}
+.btn{display:inline-block;margin:6px 10px 0 0;padding:11px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--fg)}
+blockquote{margin:28px 0 0;padding:18px 22px;border-left:4px solid var(--accent);background:var(--bg2);border-radius:0 12px 12px 0;font-size:1.15rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tags span{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.85rem;color:var(--muted)}
+.hero{padding:96px 0 80px}
+.avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-weight:800;color:#fff;margin-bottom:12px}
+footer{padding:40px 0;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#inicio">PROJETO <span>PROMOTOR</span></a>
+<button id="menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+<nav><ul id="links">
+<li><a href="#projeto">O Projeto</a></li><li><a href="#governanca">Governança</a></li><li><a href="#atuacao">Modelo de atuação</a></li>
+<li><a href="#estrategias">Estratégias</a></li><li><a href="#execucao">Mão na Massa</a></li><li><a href="#nexus">NEXUS</a></li>
+<li><a href="#artigos">Artigos</a></li><li><a href="#autores">Autores</a></li>
+</ul></nav></div></header>
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+<main>
+<section id="inicio" class="hero"><div class="wrap">
+<div class="eyebrow">Modelo de gestão e decisão</div>
+<h1>Qualidade não é controle.<br>É alavanca estratégica de resultado.</h1>
+<p class="lead">O Projeto Promotor transforma dados operacionais, indicadores e a voz do cliente em decisões estratégicas e resultados sustentáveis de negócio.</p>
+<a class="btn" href="#projeto">Conheça o projeto</a><a class="btn ghost" href="#nexus">Explorar o NEXUS</a>
+<div class="grid">
+<div class="card"><h3>Governança executiva</h3><p>Regras, ritos, responsabilidades e alinhamento estratégico com foco em resultado.</p></div>
+<div class="card"><h3>Inteligência quantitativa</h3><p>KPIs consolidados, correlação entre indicadores e leitura D-1.</p></div>
+<div class="card"><h3>Inteligência qualitativa</h3><p>Jornada do cliente, voz do cliente, leitura comportamental e causa raiz.</p></div>
+<div class="card"><h3>Execução prática</h3><p>Melhoria contínua, padronização e medição de impacto.</p></div>
+<div class="card"><h3>Gestão de riscos</h3><p>Controle de reincidência, alertas de qualidade e ações corretivas estruturadas.</p></div>
+<div class="card"><h3>NEXUS: camada científica</h3><p>Estatística aplicada, modelagem de risco e simulação de cenários.</p></div>
+</div></div></section>
 
-@layer base {
-  :root {
-    --font-inter: 'Inter', sans-serif;
+<section id="projeto"><div class="wrap">
+<div class="eyebrow">Visão geral</div><h2>O Projeto Promotor</h2>
+<p class="lead">Um modelo de alta performance em Qualidade, Governança Operacional e Inteligência Analítica. Mais do que uma metodologia de monitoria, o Promotor posiciona a Qualidade como agente de performance, prevenção, eficiência e crescimento.</p>
+<p>Ele conecta indicadores operacionais, performance humana, voz do cliente, gestão de riscos, eficiência de processos, inteligência estatística e governança executiva em um único ecossistema orientado a resultado.</p>
+<div class="grid">
+<div class="card"><h3>Modelo integrado</h3><p>Não é uma metodologia isolada: conecta dados, pessoas, processos e decisão.</p></div>
+<div class="card"><h3>Inteligência analítica</h3><p>Correlação entre KPIs, leitura D-1, modelagem preditiva e simulação de cenários.</p></div>
+<div class="card"><h3>Foco no cliente</h3><p>Voz do cliente, NPS, CSAT e jornada como norte das decisões.</p></div>
+<div class="card"><h3>Orientação a resultado</h3><p>Todo plano de ação é medido pelo impacto real no negócio.</p></div>
+</div>
+<h3 style="margin-top:32px">Onde o modelo se aplica</h3>
+<div class="tags"><span>Contact Centers de alto volume</span><span>Ambientes com múltiplas operações</span><span>Operações reguladas</span><span>Empresas com pressão por NPS e eficiência</span><span>Estruturas que buscam maturidade em Qualidade</span></div>
+<h3 style="margin-top:28px">Indicadores trabalhados</h3>
+<div class="tags"><span>NPS</span><span>CSAT</span><span>CES</span><span>FCR</span><span>Rechamada</span><span>TMA</span><span>SLA</span><span>Produtividade</span><span>Nota de Qualidade</span></div>
+</div></section>
 
-    --background: 220 20% 4%;
-    --foreground: 213 31% 91%;
-    --card: 220 17% 8%;
-    --card-foreground: 213 31% 91%;
-    --popover: 220 17% 8%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 14%;
-    --secondary-foreground: 213 31% 91%;
-    --muted: 220 14% 14%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 192 82% 37%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 18%;
-    --input: 220 13% 18%;
-    --ring: 263 70% 50%;
-    --chart-1: 263 70% 50%;
-    --chart-2: 192 82% 37%;
-    --chart-3: 38 92% 50%;
-    --chart-4: 220 20% 4%;
-    --chart-5: 213 31% 91%;
-    --radius: 0.75rem;
+<section id="governanca"><div class="wrap">
+<div class="eyebrow">Governança</div><h2>A base que sustenta toda a inteligência</h2>
+<p class="lead">Sem governança, não há dado confiável. Sem dado confiável, não há decisão estratégica. O Promotor começa pela fundação.</p>
+<div class="grid">
+<div class="card"><h3>Alinhamento estratégico</h3><p>Metas de Qualidade conectadas a objetivos corporativos, contratuais e regulatórios.</p></div>
+<div class="card"><h3>Estrutura organizacional</h3><p>Papéis claros e especializados, com sponsor executivo.</p></div>
+<div class="card"><h3>Cultura centrada no cliente</h3><p>NPS, CSAT e voz do cliente como direcionadores de decisão.</p></div>
+<div class="card"><h3>Monitoramento executivo</h3><p>Visão histórica, comparativa e preditiva dos indicadores, com cadência D-1.</p></div>
+</div></div></section>
 
-    --nexus: 263 70% 50%;
-    --cyan: 192 82% 37%;
-    --gold: 38 92% 50%;
-    --deep: 220 20% 4%;
-    --surface: 210 40% 96%;
+<section id="atuacao"><div class="wrap">
+<div class="eyebrow">Modelo de atuação</div><h2>Da monitoria à decisão estratégica</h2>
+<p class="lead">Cinco fases que transformam a leitura qualitativa e quantitativa em ações de impacto real.</p>
+<div class="grid">
+<div class="card"><div class="num">FASE 01</div><h3>Zona qualitativa</h3><p>Monitorias com mapeamento de jornada, leitura comportamental e análise multicanal. Cada avaliação gera dado estratégico, não apenas nota.</p></div>
+<div class="card"><div class="num">FASE 02</div><h3>Alertas de qualidade</h3><p>Acionamento imediato para desvios críticos, ruptura de meta e risco operacional. O alerta é preventivo, não punitivo.</p></div>
+<div class="card"><div class="num">FASE 03</div><h3>Calibrações</h3><p>Alinhamento técnico entre avaliadores, líderes e operação, garantindo consistência e justiça avaliativa.</p></div>
+<div class="card"><div class="num">FASE 04</div><h3>Controle de ações</h3><p>Plano com responsável, prazo, evidência e medição de impacto. Nenhuma ação fica sem dono.</p></div>
+<div class="card"><div class="num">FASE 05</div><h3>Ação estruturante de dados</h3><p>Consolidação, limpeza, correlação e disponibilização dos dados para decisão.</p></div>
+</div></div></section>
 
-    --sidebar-background: 220 17% 6%;
-    --sidebar-foreground: 213 31% 91%;
-    --sidebar-primary: 263 70% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 14%;
-    --sidebar-accent-foreground: 213 31% 91%;
-    --sidebar-border: 220 13% 18%;
-    --sidebar-ring: 263 70% 50%;
-  }
+<section id="estrategias"><div class="wrap">
+<div class="eyebrow">Estratégias</div><h2>Números que decidem. A voz do cliente como bússola.</h2>
+<div class="grid">
+<div class="card"><h3>Quantitativa</h3><p>KPIs padronizados, dashboards executivos, correlação de indicadores, análise de tendência, métricas preditivas e segmentação por operação, canal, equipe e turno.</p></div>
+<div class="card"><h3>Qualitativa</h3><p>Jornada do cliente, voz do cliente, leitura comportamental, causa raiz e monitoria inteligente, que alimenta todo o ecossistema.</p></div>
+</div>
+<h3 style="margin-top:28px">Pilares de sinalização da monitoria</h3>
+<div class="tags"><span>Conhecimento</span><span>Operacional</span><span>Sistema</span><span>Processo</span><span>Atitude</span></div>
+</div></section>
 
-  .dark {
-    --background: 220 20% 4%;
-    --foreground: 213 31% 91%;
-    --card: 220 17% 8%;
-    --card-foreground: 213 31% 91%;
-    --popover: 220 17% 8%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 14%;
-    --secondary-foreground: 213 31% 91%;
-    --muted: 220 14% 14%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 192 82% 37%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 18%;
-    --input: 220 13% 18%;
-    --ring: 263 70% 50%;
-    --chart-1: 263 70% 50%;
-    --chart-2: 192 82% 37%;
-    --chart-3: 38 92% 50%;
-    --chart-4: 220 20% 4%;
-    --chart-5: 213 31% 91%;
-    --sidebar-background: 220 17% 6%;
-    --sidebar-foreground: 213 31% 91%;
-    --sidebar-primary: 263 70% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 14%;
-    --sidebar-accent-foreground: 213 31% 91%;
-    --sidebar-border: 220 13% 18%;
-    --sidebar-ring: 263 70% 50%;
-  }
-}
+<section id="execucao"><div class="wrap">
+<div class="eyebrow">Mão na Massa</div><h2>Onde a análise vira resultado</h2>
+<p class="lead">O Promotor não vive de relatórios: desce para a operação, executa, mede e prova.</p>
+<div class="grid">
+<div class="card"><h3>Execução prática</h3><p>Treinamento, ajuste de processo, revisão de scripts e intervenções diretas.</p></div>
+<div class="card"><h3>Melhoria contínua</h3><p>PDCA aplicado à operação, com base em evidência.</p></div>
+<div class="card"><h3>Medição de impacto</h3><p>Antes e depois, com indicadores claros de efetividade.</p></div>
+<div class="card"><h3>Padronização</h3><p>Procedimentos e critérios documentados e replicáveis.</p></div>
+</div>
+<blockquote>"Dado sem ação é informação morta. Ação sem dado é achismo."</blockquote>
+<div class="tags"><span>Lean Six Sigma</span><span>PDCA</span><span>DMAIC</span><span>Ishikawa</span><span>Kaizen</span></div>
+</div></section>
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+<section id="nexus"><div class="wrap">
+<div class="eyebrow">Camada científica</div><h2>NEXUS</h2>
+<p class="lead">Estatística aplicada, modelagem de risco e simulação de cenários para decisões baseadas em evidência, não em opinião.</p>
+<div class="grid">
+<div class="card"><h3>Estatística aplicada</h3><p>Testes de hipótese, regressão, correlação e análise multivariada.</p></div>
+<div class="card"><h3>Modelagem de risco</h3><p>Identificação e priorização de riscos operacionais por probabilidade e impacto.</p></div>
+<div class="card"><h3>Simulação de cenários</h3><p>Projeção de resultados sob diferentes condições de volume, equipe e processo.</p></div>
+<div class="card"><h3>Análise causal</h3><p>O que realmente move o indicador versus o que apenas coincide.</p></div>
+</div>
+<div class="tags"><span>Carta de controle</span><span>Quartis e boxplot</span><span>Pearson</span><span>Regressão</span><span>Pareto</span><span>Heatmap</span></div>
+<p style="margin-top:20px">Roteiro estatístico aberto, com código e dados fictícios: <a href="https://andreluizmaciel.github.io/nps-analise-estatistica/">NPS com rigor estatístico</a>.</p>
+</div></section>
 
-  body {
-    @apply bg-background text-foreground font-inter;
-  }
+<section id="artigos"><div class="wrap">
+<div class="eyebrow">Artigos técnicos</div><h2>Conhecimento que gera impacto</h2>
+<div class="grid">
+<div class="card"><h3><a href="https://andreluizmaciel.github.io/nps-analise-estatistica/qualidade-nao-e-controle/">Qualidade não é controle. É alavanca estratégica de resultado</a></h3><p>André Luiz Maciel · 2026 · DOI <a href="https://doi.org/10.5281/zenodo.23891605">10.5281/zenodo.23891605</a></p></div>
+<div class="card"><h3><a href="https://andreluizmaciel.github.io/nps-analise-estatistica/nao-so-de-call-center/">Não Só de Call Center Vive a Experiência do Cliente</a></h3><p>André Luiz Maciel · 2026 · DOI <a href="https://doi.org/10.5281/zenodo.23898805">10.5281/zenodo.23898805</a></p></div>
+</div></div></section>
 
-  html {
-    scroll-behavior: smooth;
-  }
-}
+<section id="autores"><div class="wrap">
+<div class="eyebrow">Fundadores e idealizadores</div><h2>Quem construiu o Projeto Promotor</h2>
+<div class="grid">
+<div class="card"><div class="avatar">JC</div><h3>Jonatas Castro</h3><p>Idealizador. Direção estratégica e governança.</p><p><a href="https://www.linkedin.com/in/j%C3%B4natas-castro-39943877">LinkedIn</a></p></div>
+<div class="card"><div class="avatar">AM</div><h3>André Luiz Maciel</h3><p>Co-idealizador. Inteligência analítica e metodologia; idealizador do Mão na Massa e estruturador do NEXUS. Autor da frase "Qualidade não é controle. É alavanca estratégica de resultado."</p><p><a href="https://www.linkedin.com/in/andr%C3%A9-luiz-maciel-622a52119/">LinkedIn</a> · <a href="https://orcid.org/0009-0000-1747-1392">ORCID</a></p></div>
+<div class="card"><div class="avatar">LP</div><h3>Luilton Pereira</h3><p>Tração operacional e execução.</p><p><a href="https://www.linkedin.com/in/luilton-pereira-72502952">LinkedIn</a></p></div>
+<div class="card"><div class="avatar">CO</div><h3>Cleonice Oliveira</h3><p>Padronização e sustentação técnica.</p><p><a href="https://www.linkedin.com/in/cleonice-araujo-a586091a5">LinkedIn</a></p></div>
+</div></div></section>
+</main>
 
-@layer utilities {
-  .text-gradient-purple {
-    background: linear-gradient(135deg, hsl(263 70% 50%), hsl(192 82% 37%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(38 92% 50%), hsl(38 92% 70%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .glass-nav {
-    background: rgba(6, 11, 22, 0.8);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .glow-purple {
-    box-shadow: 0 0 60px rgba(109, 40, 217, 0.15), 0 0 120px rgba(109, 40, 217, 0.05);
-  }
-
-  .glow-cyan {
-    box-shadow: 0 0 60px rgba(8, 145, 178, 0.15), 0 0 120px rgba(8, 145, 178, 0.05);
-  }
-
-  .nexus-gradient {
-    background: radial-gradient(ellipse at center, rgba(109, 40, 217, 0.15) 0%, transparent 70%);
-  }
-}
+<footer><div class="wrap">
+<p>Projeto Promotor © 2026 Jonatas Castro, André Luiz Maciel, Luilton Pereira e Cleonice Oliveira. Conteúdo sob licença <a href="https://creativecommons.org/licenses/by-nd/4.0/deed.pt-br">CC BY-ND 4.0</a>: pode ser compartilhado com crédito aos autores, sem modificações.</p>
+<p>Este site apresenta o modelo conceitual. Não contém dados de clientes, resultados de operações ou informações internas de empresas.</p>
+</div></footer>
+<script>
+const b=document.getElementById('menu'),u=document.getElementById('links');
+b.addEventListener('click',()=>{const o=u.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+u.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{u.classList.remove('open');b.setAttribute('aria-expanded',false)}));
+</script>
+</body>
+</html>
