@@ -133,22 +133,32 @@ footer{padding:40px 0;color:var(--muted);font-size:.9rem}
 
 <section id="nexus"><div class="wrap">
 <div class="eyebrow">Camada científica</div><h2>NEXUS</h2>
-<p class="lead">Estatística aplicada, modelagem de risco e simulação de cenários para decisões baseadas em evidência, não em opinião.</p>
+<p class="lead">Estatística aplicada, modelagem de risco e simulação de cenários para decisões baseadas em evidência, não em opinião. Antes de qualquer plano de ação, o NEXUS responde a três perguntas.</p>
 <div class="grid">
-<div class="card"><h3>Estatística aplicada</h3><p>Testes de hipótese, regressão, correlação e análise multivariada.</p></div>
-<div class="card"><h3>Modelagem de risco</h3><p>Identificação e priorização de riscos operacionais por probabilidade e impacto.</p></div>
-<div class="card"><h3>Simulação de cenários</h3><p>Projeção de resultados sob diferentes condições de volume, equipe e processo.</p></div>
-<div class="card"><h3>Análise causal</h3><p>O que realmente move o indicador versus o que apenas coincide.</p></div>
+<div class="card"><div class="num">PERGUNTA 1</div><h3>A variação é real ou é ruído?</h3><p>Cada resposta vale +100, 0 ou −100, e o NPS é a média. Por isso ele tem margem de erro: com 300 respostas no mês, ela costuma passar de ±8 pontos. Teste z entre meses e carta de controle mostram quando a mudança supera o ruído.</p></div>
+<div class="card"><div class="num">PERGUNTA 2</div><h3>Mudou o perfil ou mudou a operação?</h3><p>A decomposição mix × desempenho (shift-share) separa o efeito de mudar o tipo de caso que respondeu do efeito de o mesmo tipo de caso ser avaliado diferente. As duas partes somam exatamente a variação do mês.</p></div>
+<div class="card"><div class="num">PERGUNTA 3</div><h3>Quanto cada fator tira do NPS?</h3><p>Regressão no nível da resposta, com erros robustos: cada coeficiente se lê em pontos de NPS. Depois, a simulação de cenários estima quanto vale corrigir cada fator.</p></div>
 </div>
-<div class="tags"><span>Carta de controle</span><span>Quartis e boxplot</span><span>Pearson</span><span>Regressão</span><span>Pareto</span><span>Heatmap</span></div>
-<p style="margin-top:20px">Roteiro estatístico aberto, com código e dados fictícios: <a href="https://andreluizmaciel.github.io/nps-analise-estatistica/">NPS com rigor estatístico</a>.</p>
+<div class="grid">
+<div class="card"><h3>Comparação justa entre atendentes</h3><p>Gráfico de funil com limites que dependem do volume e encolhimento bayesiano empírico, para não punir quem tem poucas respostas.</p></div>
+<div class="card"><h3>Contrafactual</h3><p>Qual seria o NPS sem um grupo de casos e quanto dos detratores vem dele.</p></div>
+<div class="card"><h3>Voz do cliente por temas</h3><p>Classificação de comentários por tema, sempre reportando o percentual que ficou sem tema.</p></div>
+<div class="card"><h3>Árvore de KPIs</h3><p>Prazo, resolutividade, tratativa, esforço e eficiência ligados ao NPS, cada um com seu dono.</p></div>
+</div>
+<div class="grid">
+<figure class="card" style="margin:0"><img src="https://andreluizmaciel.github.io/nps-analise-estatistica/img/01_nps_mensal.png" alt="NPS mensal com margem de erro e limites de controle — dados fictícios" style="width:100%;border-radius:8px;background:#fff" loading="lazy"><figcaption><p>NPS mensal com margem de erro e carta de controle (dados fictícios).</p></figcaption></figure>
+<figure class="card" style="margin:0"><img src="https://andreluizmaciel.github.io/nps-analise-estatistica/img/03_shift_share.png" alt="Decomposição mix × desempenho mês a mês — dados fictícios" style="width:100%;border-radius:8px;background:#fff" loading="lazy"><figcaption><p>Mix × desempenho: quanto da variação veio do perfil e quanto da operação (dados fictícios).</p></figcaption></figure>
+</div>
+<div class="tags"><span>Margem de erro</span><span>Teste z</span><span>Carta de controle</span><span>Shift-share</span><span>Regressão (MQO, HC1)</span><span>Simulação de cenários</span><span>Gráfico de funil</span><span>Bayes empírico</span><span>Pareto</span></div>
+<p style="margin-top:20px">Roteiro completo, com código aberto em Python e dados 100% fictícios: <a href="artigos/nps-com-rigor-estatistico.html">NPS com rigor estatístico</a>.</p>
 </div></section>
 
 <section id="artigos"><div class="wrap">
 <div class="eyebrow">Artigos técnicos</div><h2>Conhecimento que gera impacto</h2>
 <div class="grid">
-<div class="card"><h3><a href="https://andreluizmaciel.github.io/nps-analise-estatistica/qualidade-nao-e-controle/">Qualidade não é controle. É alavanca estratégica de resultado</a></h3><p>André Luiz Maciel · 2026 · DOI <a href="https://doi.org/10.5281/zenodo.23891605">10.5281/zenodo.23891605</a></p></div>
-<div class="card"><h3><a href="https://andreluizmaciel.github.io/nps-analise-estatistica/nao-so-de-call-center/">Não Só de Call Center Vive a Experiência do Cliente</a></h3><p>André Luiz Maciel · 2026 · DOI <a href="https://doi.org/10.5281/zenodo.23898805">10.5281/zenodo.23898805</a></p></div>
+<div class="card"><h3><a href="artigos/qualidade-nao-e-controle.html">Qualidade não é controle. É alavanca estratégica de resultado</a></h3><p>André Luiz Maciel · 2026 · DOI 10.5281/zenodo.23891605</p><p>Da monitoria à leitura estatística do NPS: árvore de KPIs, pilares de monitoria e DMAIC.</p></div>
+<div class="card"><h3><a href="artigos/nao-so-de-call-center.html">Não Só de Call Center Vive a Experiência do Cliente</a></h3><p>André Luiz Maciel · 2026 · DOI 10.5281/zenodo.23898805</p><p>A experiência é resultado da jornada inteira, e a Qualidade conecta a voz do cliente às áreas que precisam agir.</p></div>
+<div class="card"><h3><a href="artigos/nps-com-rigor-estatistico.html">NPS com rigor estatístico</a></h3><p>André Luiz Maciel · 2026 · código aberto</p><p>Como separar ruído de mudança real e descobrir o que move o indicador.</p></div>
 </div></div></section>
 
 <section id="autores"><div class="wrap">
