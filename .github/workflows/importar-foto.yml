@@ -1,0 +1,26 @@
+name: Importar foto do autor
+on:
+  push:
+    paths:
+      - '.github/workflows/importar-foto.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  foto:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar foto
+        run: |
+          mkdir -p img
+          curl -fsSL -o img/andre-luiz-maciel.png "https://media.base44.com/images/public/user_69eb8639e455098816c8125f/eb246b2b3_AndreLuizMaciel.png"
+          curl -fsSL -o img/andre-luiz-maciel-2.jpg "https://lh3.googleusercontent.com/a/ACg8ocKEhzT3qWou_0iHXQfiSlq9SopvxpNQu1c4xo4z0x2uWvCJm-m8BQ=s800"
+          file img/*
+      - name: Commit
+        run: |
+          git config user.name "AndreLuizMaciel"
+          git config user.email "AndreLuizMaciel@users.noreply.github.com"
+          git add img/
+          git diff --cached --quiet || git commit -m "Adiciona fotos do autor André Luiz Maciel"
+          git push
