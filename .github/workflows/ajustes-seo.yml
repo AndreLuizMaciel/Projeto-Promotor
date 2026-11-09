@@ -1,0 +1,64 @@
+name: Ajustes de autoria e SEO
+on:
+  push:
+    paths:
+      - '.github/workflows/ajustes-seo.yml'
+permissions:
+  contents: write
+jobs:
+  ajustes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Aplicar ajustes
+        run: |
+          cat > /tmp/ajustes.py <<'PYEOF'
+          import json,re,pathlib
+          B='https://andreluizmaciel.github.io/Projeto-Promotor/'
+          ORC='https://orcid.org/0009-0000-1747-1392'
+          IMG=B+'img/andre-luiz-maciel.png'
+          SAME=[ORC,"https://www.linkedin.com/in/andr%C3%A9-luiz-maciel-622a52119/","https://lattes.cnpq.br/5732518784001009","https://openalex.org/A5160373798","https://scholar.google.com/citations?user=NGNsjaMAAAAJ","https://github.com/AndreLuizMaciel","https://medium.com/@andreluizmaciel26"]
+          AUTHOR={"@type":"Person","@id":ORC,"name":"André Luiz Maciel","url":B+"autor.html","image":IMG,"sameAs":SAME}
+          def P(f): return pathlib.Path(f)
+          # 1 frases.html: enrich Person
+          f=P('frases.html'); s=f.read_text()
+          s=s.replace('"sameAs":["https://orcid.org/0009-0000-1747-1392","https://github.com/AndreLuizMaciel"]}', '"url":"'+B+'autor.html","image":"'+IMG+'","sameAs":'+json.dumps(SAME)+'}',1)
+          s=s.replace('(ORCID <a href="https://orcid.org/0009-0000-1747-1392">','(<a href="autor.html">página do autor</a>; ORCID <a href="https://orcid.org/0009-0000-1747-1392">',1)
+          f.write_text(s)
+          # 2 index.html: own photo + Person
+          f=P('index.html'); s=f.read_text()
+          s=s.replace('https://media.base44.com/images/public/user_69eb8639e455098816c8125f/eb246b2b3_AndreLuizMaciel.png','img/andre-luiz-maciel.png')
+          s=s.replace('{"@type":"Person","name":"André Luiz Maciel","sameAs":["https://orcid.org/0009-0000-1747-1392","https://www.linkedin.com/in/andr%C3%A9-luiz-maciel-622a52119/"]}', json.dumps(AUTHOR,ensure_ascii=False),1)
+          s=s.replace('<h3>André Luiz Maciel</h3>','<h3><a href="autor.html">André Luiz Maciel</a></h3>',1)
+          s=s.replace('<a href="https://orcid.org/0009-0000-1747-1392">ORCID</a></p>','<a href="https://orcid.org/0009-0000-1747-1392">ORCID</a> · <a href="autor.html">Página do autor</a></p>',1)
+          f.write_text(s)
+          # 3 articles: JSON-LD
+          arts={'artigos/nao-so-de-call-center.html':'10.5281/zenodo.23898805','artigos/qualidade-nao-e-controle.html':'10.5281/zenodo.23891605','artigos/nps-com-rigor-estatistico.html':None}
+          for fn,doi in arts.items():
+              f=P(fn); s=f.read_text()
+              if 'application/ld+json' in s: continue
+              g=lambda n: (re.search(r'<meta name="'+n+r'" content="([^"]*)"',s) or [None,None])[1]
+              d={"@context":"https://schema.org","@type":"ScholarlyArticle","headline":g('citation_title'),"name":g('citation_title'),"author":AUTHOR,"datePublished":g('citation_publication_date'),"inLanguage":"pt-BR","description":g('description'),"url":B+fn,"license":"https://creativecommons.org/licenses/by/4.0/"}
+              if doi: d["identifier"]="https://doi.org/"+doi; d["sameAs"]="https://doi.org/"+doi
+              s=s.replace('</head>','<script type="application/ld+json">'+json.dumps(d,ensure_ascii=False)+'</script>\n</head>',1)
+              f.write_text(s)
+          f=P('artigos/reclame-aqui-armadilha.html'); s=f.read_text()
+          s=s.replace('"author": {"@type": "Person", "name": "André Luiz Maciel", "@id": "https://orcid.org/0009-0000-1747-1392", "sameAs": "https://orcid.org/0009-0000-1747-1392"}','"author": '+json.dumps(AUTHOR,ensure_ascii=False),1)
+          f.write_text(s)
+          # 4 author link in article bylines: meta link rel=author
+          for fn in list(arts)+['artigos/reclame-aqui-armadilha.html']:
+              f=P(fn); s=f.read_text()
+              if 'rel="author"' not in s: s=s.replace('</head>','<link rel="author" href="../autor.html">\n</head>',1); f.write_text(s)
+          # 5 sitemap
+          f=P('sitemap.xml'); s=f.read_text()
+          if 'autor.html' not in s: s=s.replace('</urlset>','  <url><loc>'+B+'autor.html</loc><lastmod>2026-11-09</lastmod></url>\n</urlset>'); f.write_text(s)
+          print('ok')
+          PYEOF
+          python3 /tmp/ajustes.py
+      - name: Commit
+        run: |
+          git config user.name "AndreLuizMaciel"
+          git config user.email "AndreLuizMaciel@users.noreply.github.com"
+          git add -A -- . ':!.github'
+          git diff --cached --quiet || git commit -m "Página do autor: foto própria, dados estruturados e links de autoria"
+          git push
