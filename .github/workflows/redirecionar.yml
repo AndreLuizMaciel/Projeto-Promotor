@@ -1,0 +1,31 @@
+name: Redirecionar para o QualiCX Brasil
+on:
+  push:
+    paths: ['.github/workflows/redirecionar.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  redirecionar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Gerar paginas de redirecionamento
+        run: |
+          cat > /tmp/redir.py <<'QCXEOF'
+          import pathlib
+          N = 'https://qualicx-brasil.github.io/'
+          m = {'index.html': 'https://projetopromotor-nexus.base44.app/', 'autor.html': N + 'autor.html', 'frases.html': N + 'frases.html'}
+          for p in pathlib.Path('artigos').glob('*.html'):
+              m[p.as_posix()] = N + p.as_posix()
+          T = '<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Página movida</title><meta http-equiv="refresh" content="0; url=URL"><link rel="canonical" href="URL"><meta name="robots" content="noindex, follow"><script>location.replace("URL")</script></head><body><p>Esta página mudou para <a href="URL">URL</a>.</p></body></html>'
+          for k, u in m.items():
+              pathlib.Path(k).write_text(T.replace('URL', u), encoding='utf-8')
+              print(k, '->', u)
+          pathlib.Path('sitemap.xml').unlink(missing_ok=True)
+          QCXEOF
+          python3 /tmp/redir.py
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Redireciona o site antigo para o QualiCX Brasil e o site do Projeto Promotor"
